@@ -158,8 +158,10 @@ public class TestLinkSite {
 		final ArrayList<TestCase> filteredTestCases = new ArrayList<TestCase>();
 		
 		for( final TestCase testCase : testCases ) {
-			if(!testCase.getPlatform().getName().equals(this.platform.getName())){
-				continue;
+			if (this.platform != null){
+				if(!testCase.getPlatform().getName().equals(this.platform.getName())){
+					continue;
+				}
 			}
 			filteredTestCases.add(testCase);
 			testCase.setTestProjectId(getTestProject().getId());
