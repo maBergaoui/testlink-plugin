@@ -150,7 +150,7 @@ public class TestLinkSite {
 				null,
 				null, 
 				null, 
-				executionStatus, // execute status
+				null, // execute status
 				ExecutionType.AUTOMATED, 
 				Boolean.TRUE,
 				TestCaseDetails.FULL);			
@@ -158,7 +158,7 @@ public class TestLinkSite {
 		final ArrayList<TestCase> filteredTestCases = new ArrayList<TestCase>();
 		
 		for( final TestCase testCase : testCases ) {
-			if(!executionStatuses.contains(testCase.getExecutionStatus())) {
+			if(!testCase.getPlatform().getName().equals(this.platform.getName())){
 				continue;
 			}
 			filteredTestCases.add(testCase);
